@@ -1,8 +1,8 @@
 [project]
 name = "telco_churn"
-version = "0.1.0"
+version = "0.0.1"
 requires-python = ">=3.11"
-dependencies = ["pandas", "scikit-learn", "matplotlib"]
+dependencies = ["pandas", "scikit-learn", "matplotlib", "pandera", "pyarrow", "numpy"]
 
 [build-system]
 requires = ["setuptools>=68"]

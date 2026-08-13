@@ -101,6 +101,36 @@ def cost_per_customer(
     )
 
 
+def oracle_policy(y_true, monthly_charges, contract, a: dict = COST_ASSUMPTIONS):
+    """The cost-optimal policy given perfect foresight of who churns.
+
+    Contacting a known churner only pays when the expected margin saved exceeds
+    the offer cost, i.e. eps * V_i > C_i. Contacting every churner regardless is
+    NOT the ceiling: when eps is low it costs more than doing nothing, which
+    produces a negative "headroom" and a meaningless capture ratio.
+
+    At the default assumptions every customer clears break-even, so this returns
+    the same policy as contacting all churners. The definitions diverge only when
+    eps falls below the break-even ratio for some segment.
+    """
+    y = np.asarray(y_true, dtype=float)
+    worth_it = a["offer_effectiveness"] * value_at_risk(
+        monthly_charges, contract, a
+    ) > offer_cost(monthly_charges, a)
+    return (y * worth_it).astype(int)
+
+
+def oracle_cost(y_true, monthly_charges, contract, a: dict = COST_ASSUMPTIONS):
+    """Lower bound on cost per customer. No model can beat this."""
+    return cost_per_customer(
+        y_true,
+        oracle_policy(y_true, monthly_charges, contract, a),
+        monthly_charges,
+        contract,
+        a,
+    )
+
+
 def policy_from_proba(y_proba, monthly_charges, contract, a: dict = COST_ASSUMPTIONS):
     """Cost-optimal contact decisions from calibrated probabilities.
 

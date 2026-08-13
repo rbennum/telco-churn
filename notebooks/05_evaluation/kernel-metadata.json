@@ -1,0 +1,21 @@
+{
+  "id": "benranum/churn-proj-05-evaluation",
+  "title": "churn proj 05 evaluation",
+  "code_file": "05_evaluation.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "machine_shape": "",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [
+    "benranum/churn-proj-01-ingest",
+    "benranum/churn-proj-02-eda",
+    "benranum/churn-proj-03-baseline",
+    "benranum/churn-proj-04-model"
+  ],
+  "model_sources": []
+}

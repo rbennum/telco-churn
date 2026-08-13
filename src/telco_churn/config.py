@@ -31,6 +31,7 @@ ARTIFACT_DIRS = [
     OUT_DIR,
     Path("outputs"),
     Path("../outputs"),
+    Path("/kaggle/input/churn-proj-02-eda"),
 ]
 
 RAW_FILENAME = "WA_Fn-UseC_-Telco-Customer-Churn.csv"

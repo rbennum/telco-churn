@@ -1,0 +1,16 @@
+{
+  "id": "benranum/churn-proj-03-baseline",
+  "title": "churn proj 03 baseline",
+  "code_file": "03_baseline.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "machine_shape": "",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": ["benranum/churn-proj-01-ingest", "benranum/churn-proj-02-eda"],
+  "model_sources": []
+}

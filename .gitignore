@@ -7,3 +7,5 @@ kaggle.json
 __pycache__/
 .ipynb_checkpoints/
 .venv/
+**/*.egg-info/
+.DS_Store
